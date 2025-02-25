@@ -65,6 +65,3 @@ As cores secundárias complementam as primárias e são usadas para criar contra
 | Cinza Claro     | `#E5E5E5` | Fundos secundários, divisores|
 
 ---
-
-Essa estrutura pode ser facilmente adaptada para um documento Markdown, HTML ou PDF. Se precisar de algo mais específico, como um exemplo em código ou design visual, é só pedir!
-
