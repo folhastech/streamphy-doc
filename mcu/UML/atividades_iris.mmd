@@ -1,0 +1,14 @@
+flowchart TD
+  Start[Início] --> LoadConfig[Carregar config.txt]
+  LoadConfig --> CheckWiFi[Conectar à rede Wi-Fi]
+  CheckWiFi -->|Conexão bem-sucedida| ListenLoRa[Escutar pacotes LoRa]
+  CheckWiFi -->|Falha na conexão| OpenAP[Abrir AP com captive portal]
+  OpenAP --> UserConfig[Usuário configura nova rede]
+  UserConfig --> CheckWiFi
+
+  ListenLoRa --> ReceivePackets[Receber pacotes LoRa]
+  ReceivePackets --> CheckFragmentation[Verificar fragmentação]
+  CheckFragmentation -->|Pacote único| SendToMQTT[Enviar dados ao servidor MQTT]
+  CheckFragmentation -->|Pacotes fragmentados| Reassemble[Montar mensagem completa]
+  Reassemble --> SendToMQTT
+  SendToMQTT --> ListenLoRa

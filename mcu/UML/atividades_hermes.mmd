@@ -1,0 +1,21 @@
+flowchart TD
+  Start[Início] --> LoadConfig[Carregar config.txt]
+  LoadConfig --> CheckSensors[Configurar sensores]
+  CheckSensors --> CollectData[Coletar dados dos sensores]
+  CollectData --> CheckContinuous[Verificar CONTINUOUS_COLLECT_TIME]
+  CheckContinuous -->|Configurado| ContinuousCollect[Coletar continuamente]
+  CheckContinuous -->|Não configurado| SerializeData[Serializar dados em FlatBuffer]
+  ContinuousCollect --> WaitContinuous[Esperar CONTINUOUS_COLLECT_TIME]
+  WaitContinuous --> ContinuousCollect
+  ContinuousCollect --> SerializeData
+  SerializeData --> CheckPacketSize[Verificar tamanho do pacote]
+  CheckPacketSize -->|<= 246 bytes| TransmitData[Transmitir dados via LoRa]
+  CheckPacketSize -->|> 246 bytes| FragmentData[Fragmentar pacotes]
+  FragmentData --> TransmitData
+  TransmitData --> WaitACK[Aguardar ACK]
+  WaitACK -->|ACK recebido| CheckInterval[Verificar MESSAGE_INTERVAL]
+  WaitACK -->|Timeout| Retry[Retransmitir pacote]
+  Retry --> WaitACK
+  CheckInterval -->|Intervalo atingido| CollectData
+  CheckInterval -->|Intervalo não atingido| WaitInterval[Esperar MESSAGE_INTERVAL]
+  WaitInterval --> CheckInterval

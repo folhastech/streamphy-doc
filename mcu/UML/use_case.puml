@@ -1,0 +1,41 @@
+@startuml
+title Casos de Uso - Sistema Hermes e Iris
+
+actor "Técnico da Streamphy" as Technician
+actor "Usuário" as User
+actor "Servidor MQTT" as MQTT
+actor "Rede Wi-Fi" as WiFi
+
+package Hermes {
+  usecase "Configurar dispositivo\nvia config.txt" as UC1
+  usecase "Coletar dados dos sensores" as UC2
+  usecase "Transmitir dados via LoRa" as UC3
+  usecase "Fragmentar pacotes grandes" as UC4
+  usecase "Retransmitir pacotes\nem caso de falha" as UC5
+  usecase "Coletar dados continuamente\n(CONTINUOUS_COLLECT_TIME)" as UC6
+}
+
+package Iris {
+  usecase "Configurar dispositivo\nvia config.txt" as UC7
+  usecase "Conectar à rede Wi-Fi" as UC8
+  usecase "Abrir AP com captive portal" as UC9
+  usecase "Receber pacotes LoRa" as UC10
+  usecase "Montar mensagens completas" as UC11
+  usecase "Enviar dados ao servidor MQTT" as UC12
+  usecase "Operar continuamente\n(escutar e processar mensagens)" as UC13
+}
+
+Technician --> UC1
+Technician --> UC7
+User --> UC8
+User --> UC9
+UC2 --> UC3
+UC3 --> UC4
+UC3 --> UC5
+UC2 --> UC6
+UC10 --> UC11
+UC11 --> UC12
+UC8 --> WiFi
+UC12 --> MQTT
+UC13 --> UC10
+@enduml
