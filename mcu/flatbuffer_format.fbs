@@ -1,0 +1,21 @@
+namespace DeviceData;
+
+union SensorValue { FloatValue, IntValue, StringValue, BoolValue }
+
+table FloatValue { value:float; }
+table IntValue { value:int; }
+table StringValue { value:string; }
+table BoolValue { value:bool; }
+
+table SensorReading {
+  sensor_id:ubyte;
+  value:SensorValue;
+}
+
+table Data {
+  version:ushort;
+  device_id:ushort;
+  readings:[SensorReading];
+}
+
+root_type Data;
