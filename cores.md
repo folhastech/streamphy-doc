@@ -7,17 +7,17 @@ Este guia define a paleta de cores oficial da empresa, projetada para transmitir
 ### 1. **Cores Primárias**
 As cores primárias são a base da identidade visual. Elas devem ser usadas em elementos principais, como cabeçalhos, botões e ícones.
 
-- **Cinza Escuro (Base Neutra)**  
-  - Hex: `#2C2C2C`  
-  - Hex: `#3A3A3A`  
-  - Hex: `#4F4F4F`  
+- **Branco Neve (Base Neutra)**  
+  - Hex: `#F9FAFB`  
+  - Hex: `#D9D9D9`  
+  - Hex: `#FFFFFF`  
   - Uso: Fundos principais, textos secundários, bordas.
 
 - **Azul (Destaque e Identidade)**  
   - Hex: `#007BFF`  
   - Hex: `#0056D2`  
   - Hex: `#00A8E8`  
-  - Uso: Botões, links, ícones, elementos interativos.
+  - Uso: Links, ícones, elementos interativos.
 
 ### 2. **Cores Secundárias**
 As cores secundárias complementam as primárias e são usadas para criar contraste e hierarquia visual.
@@ -30,22 +30,22 @@ As cores secundárias complementam as primárias e são usadas para criar contra
   - Hex: `#E5E5E5`  
   - Uso: Fundos secundários, divisores, áreas de destaque.
 
-- **Azul Claro**  
-  - Hex: `#D0EFFF`  
-  - Uso: Hover effects, detalhes sutis.
+- **Preto**  
+  - Hex: `#000000`  
+  - Uso: Hover effects, detalhes sutis, fontes.
 
 ## Exemplos de Uso
 
 ### Fundo Principal
-- **Cor**: Cinza Escuro (`#2C2C2C`)  
+- **Cor**: Branco (`#F9FAFB`)  
 - **Uso**: Cria um visual moderno e minimalista, ideal para dashboards e páginas principais.
 
 ### Botões e Links
-- **Cor**: Azul Vibrante (`#007BFF`)  
+- **Cor**: Cinza (`#3A3A3A`)  
 - **Uso**: Destaque para ações importantes, como botões de chamada para ação (CTAs).
 
 ### Texto
-- **Cor**: Branco (`#FFFFFF`) ou Cinza Claro (`#E5E5E5`)  
+- **Cor**: Branco (`#FFFFFF`) ou Cinza Claro (`#9CA3AF`)  
 - **Uso**: Garantir legibilidade em fundos escuros.
 
 ### Hover/Interação
@@ -56,9 +56,9 @@ As cores secundárias complementam as primárias e são usadas para criar contra
 
 | Cor            | Hex       | Uso                          |
 |-----------------|-----------|------------------------------|
-| Cinza Escuro    | `#2C2C2C` | Fundo principal              |
-| Cinza Grafite   | `#3A3A3A` | Fundo alternativo            |
-| Azul Vibrante   | `#007BFF` | Botões, links, ícones        |
+| Branco Neve     | `#F9FAFB` | Fundo principal              |
+| Branco Gélido   | `#D9D9D9` | Fundo alternativo            |
+| Cinza Nardo     | `#3A3A3A` | Botões, links, ícones        |
 | Azul Profundo   | `#0056D2` | Destaques                    |
 | Azul Claro      | `#00A8E8` | Hover effects                |
 | Branco          | `#FFFFFF` | Texto principal, contraste   |
