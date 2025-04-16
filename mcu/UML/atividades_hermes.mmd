@@ -9,8 +9,8 @@ flowchart TD
   WaitContinuous --> ContinuousCollect
   ContinuousCollect --> SerializeData
   SerializeData --> CheckPacketSize[Verificar tamanho do pacote]
-  CheckPacketSize -->|<= 246 bytes| TransmitData[Transmitir dados via LoRa]
-  CheckPacketSize -->| '>246 bytes| FragmentData[Fragmentar pacotes]
+  CheckPacketSize -->|<= 247 bytes| TransmitData[Transmitir dados via LoRa]
+  CheckPacketSize -->| '>247 bytes| FragmentData[Fragmentar pacotes]
   FragmentData --> TransmitData
   TransmitData --> WaitACK[Aguardar ACK]
   WaitACK -->|ACK recebido| CheckInterval[Verificar MESSAGE_INTERVAL]
