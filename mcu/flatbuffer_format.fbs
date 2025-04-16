@@ -1,11 +1,12 @@
 namespace DeviceData;
 
-union SensorValue { FloatValue, IntValue, StringValue, BoolValue }
+union SensorValue { FloatValue, IntValue, StringValue, BoolValue, ByteValue }
 
 table FloatValue { value:float; }
 table IntValue { value:int; }
 table StringValue { value:string; }
 table BoolValue { value:bool; }
+table ByteValue { value:[ubyte]; }
 
 table SensorReading {
   sensor_id:ubyte;
@@ -14,7 +15,6 @@ table SensorReading {
 
 table Data {
   version:ushort;
-  device_id:ushort;
   readings:[SensorReading];
 }
 
