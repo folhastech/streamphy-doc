@@ -267,5 +267,3 @@
     - **Resultado:** Dashboard exibe mensagem de ausência de dados
 
 ---
-
-Se precisar de mais fluxos alternativos ou detalhamento, é só pedir!
