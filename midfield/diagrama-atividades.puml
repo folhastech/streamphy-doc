@@ -1,0 +1,38 @@
+@startuml
+|Inicio|
+start
+
+:Receber Mensagem MQTT;
+
+:Extrair Id Gateway;
+
+:Verificar Gateway;
+if (Gateway encontrado?) then (Não)
+  :Registrar Erro;
+  stop
+else (Sim)
+  :Buscar Empresa;
+  if (Empresa encontrada?) then (Não)
+    :Registrar Erro;
+    stop
+  else (Sim)
+    :Converter Mensagem;
+    if (Erro na conversão?) then (Sim)
+      :Registrar Erro;
+      stop
+    else (Não)
+      :Verificar Destino da Mensagem;
+      if (Webhook configurado?) then (Sim)
+        :Enviar Webhook;
+        :Registrar Evento;
+        stop
+      else (MQTT configurado)
+        :Enviar MQTT;
+        :Registrar Evento;
+        stop
+      endif
+    endif
+  endif
+endif
+
+@enduml
