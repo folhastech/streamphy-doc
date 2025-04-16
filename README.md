@@ -6,6 +6,7 @@
 
 # Link de ferramentas:
   - [.puml viewer](https://www.planttext.com/)
+  - [.mmd viewer](https://mermaid.live/edit)
 
 
 # Casos de uso (visualizar)
